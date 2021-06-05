@@ -39,7 +39,9 @@ public class CardTrick {
             System.out.println("Invalid!!! Please enter the suits again");
             suit= input.nextLine();
         }
-        
+        Card uCard= new Card();
+        uCard.setValue(value);
+        uCard.setSuit(suit);
     }
 }
         
