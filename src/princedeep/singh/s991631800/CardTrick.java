@@ -1,6 +1,6 @@
 package princedeep.singh.s991631800;
 import java.util.Random;
-import java.util.Scanner;
+//import java.util.Scanner;
 /**
  * A class that fills a magic hand of 7 cards with random Card Objects and then asks the user to pick a card and
  * searches the array of cards for the match to the user's card. To be used as starting code in ICE 1
@@ -21,10 +21,10 @@ public class CardTrick {
             Card c = new Card();
             c.setValue(random.nextInt(13)+1);
             c.setSuit(Card.SUITS[random.nextInt(4)]);
-            magicHand[a]= c;//giving value of ith card of array to c
+            magicHand[a]= c;//giving value of ath card of array to c
                
         }
-        Scanner input = new Scanner(System.in);
+       /* Scanner input = new Scanner(System.in);
         System.out.println("Enter the value of cards");
         int value= input.nextInt();
         if ( value < 1 || value >= 14)
@@ -54,7 +54,28 @@ public class CardTrick {
             if(num == true)
                 System.out.println("You have won the game");
             else
-                System.out.println("Sorry you have lost the game");
+                System.out.println("Sorry you have lost the game"); */
+        
+        // Editing in github of luckyCard
+        
+        Card luckyCard = new Card();
+        luckyCard.setValue(3);
+        luckyCard.setSuit("Spade");
+        System.out.println("My lucky card is: " + luckyCard.getValue() +" "+ luckyCard.getSuit());
+        boolean num = false;
+        for(int a=0; a< magicHand.length; a++)
+        {
+            if(magicHand[a].getValue() == luckyCard.getValue() && magicHand[a].getSuit().equalsIgnoreCase(luckyCard.getSuit()))
+            {
+                num = true;
+                break;
+            }
+        }
+        if(num == true)
+            System.out.println("You won!! and your lucky card is really lucky");
+        else
+            System.out.println("You lose!! and you must chose other card lucky");   
+        
     }
 }
         
