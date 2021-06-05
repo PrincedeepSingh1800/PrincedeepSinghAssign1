@@ -42,6 +42,19 @@ public class CardTrick {
         Card uCard= new Card();
         uCard.setValue(value);
         uCard.setSuit(suit);
+         boolean num = false;
+        for( int a = 0; a< magicHand.length; a++)
+        {
+            if(magicHand[a].getValue() == uCard.getValue() && magicHand[a].getSuit().equalsIgnoreCase(uCard.getSuit()))// suits can be lower or upper case
+            {
+                num = true;
+            break;
+            }
+        }
+            if(num == true)
+                System.out.println("You have won the game");
+            else
+                System.out.println("Sorry you have lost the game");
     }
 }
         
